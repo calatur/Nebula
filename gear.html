@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The phone settings, apps, and processing workflow behind Nebula's mobile astrophotography shots.">
+    <title>Gear &amp; Techniques | Nebula</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8C%8C</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Nebula</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gear.html" class="active">Gear &amp; Techniques</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle light and dark theme">☀️</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gear-section">
+            <h2>Gear &amp; Techniques</h2>
+            <p>Every shot in the gallery was taken on a phone, not a telescope. Here's the exact settings used for each type of shot, and the workflow that turns a raw file into a finished image.</p>
+
+            <div class="gear-layout">
+                <div class="gear-main">
+                    <article class="table-wrap">
+                        <h3>Settings by Shot Type</h3>
+                        <table class="specs-table">
+                            <caption>Recommended camera settings for common night-sky subjects</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Mode</th>
+                                    <th scope="col">Exposure</th>
+                                    <th scope="col">ISO</th>
+                                    <th scope="col">Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Star trails</td>
+                                    <td>Long exposure / stacking</td>
+                                    <td>20–30 min (stacked)</td>
+                                    <td>400–800</td>
+                                    <td>Use a stacking app instead of one huge exposure to control noise.</td>
+                                </tr>
+                                <tr>
+                                    <td>Milky Way</td>
+                                    <td>RAW / DNG</td>
+                                    <td>10–15 sec</td>
+                                    <td>1600–3200</td>
+                                    <td>Wider aperture lens performs best; avoid moonlit nights.</td>
+                                </tr>
+                                <tr>
+                                    <td>Andromeda / deep sky</td>
+                                    <td>RAW / DNG, tracked</td>
+                                    <td>5–10 sec per frame</td>
+                                    <td>1600</td>
+                                    <td>Stack 20+ frames in Sequator to pull detail out of the noise.</td>
+                                </tr>
+                                <tr>
+                                    <td>Orion</td>
+                                    <td>Night mode</td>
+                                    <td>3–6 sec</td>
+                                    <td>800–1600</td>
+                                    <td>Bright enough for a single, unstacked exposure on most phones.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="workflow">
+                        <h3>Processing Workflow</h3>
+                        <ol class="workflow-list">
+                            <li>Shoot in RAW/DNG wherever the app supports it — JPEG compresses away the detail you need for editing.</li>
+                            <li>Stack multiple frames of the same scene in Sequator to boost signal and cut sensor noise.</li>
+                            <li>Bring the stacked file into Snapseed to adjust contrast, reduce noise further, and correct white balance.</li>
+                            <li>Export at full resolution — resist the urge to over-sharpen; night skies punish heavy-handed editing.</li>
+                        </ol>
+                    </article>
+                </div>
+
+                <aside class="gear-aside">
+                    <h3>Quick Tips</h3>
+                    <ul>
+                        <li>Turn off HDR — it fights long exposures.</li>
+                        <li>Use a timer or Bluetooth shutter to avoid camera shake.</li>
+                        <li>Check moon phase before planning a shoot; new moon is best.</li>
+                        <li>Cold weather drains batteries fast — bring a spare.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nebula Mobile Astrophotography. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

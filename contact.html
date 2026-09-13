@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch about mobile astrophotography settings, gear, or collaborations.">
     <title>Contact | Nebula</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8C%8C</text></svg>">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,16 +15,17 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="gear.html">Gear &amp; Techniques</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
             <div class="nav-controls">
-                <button id="theme-toggle" class="theme-btn">☀️</button>
-                <div class="hamburger" id="hamburger">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle light and dark theme">☀️</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
@@ -32,24 +35,24 @@
             <h2>Get in Touch</h2>
             <p>Have questions about camera settings or want to collaborate?</p>
             
-            <form id="contact-form" class="contact-form">
+            <form id="contact-form" class="contact-form" novalidate>
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
-                    <span class="error-msg" id="name-error"></span>
+                    <input type="text" id="name" name="name" aria-describedby="name-error">
+                    <span class="error-msg" id="name-error" role="alert"></span>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                    <span class="error-msg" id="email-error"></span>
+                    <input type="email" id="email" name="email" aria-describedby="email-error">
+                    <span class="error-msg" id="email-error" role="alert"></span>
                 </div>
                 <div class="form-group">
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5"></textarea>
-                    <span class="error-msg" id="message-error"></span>
+                    <textarea id="message" name="message" rows="5" aria-describedby="message-error"></textarea>
+                    <span class="error-msg" id="message-error" role="alert"></span>
                 </div>
                 <button type="submit" class="btn">Send Message</button>
-                <div id="success-msg" class="success-msg"></div>
+                <div id="success-msg" class="success-msg" role="status" aria-live="polite"></div>
             </form>
         </section>
     </main>

@@ -25,7 +25,8 @@ const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    const isOpen = navLinks.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen);
 });
 
 // 3. Image Modal Logic (Dynamic Content)
@@ -35,23 +36,46 @@ const captionText = document.getElementById('modal-caption');
 const closeModal = document.getElementById('close-modal');
 const galleryImages = document.querySelectorAll('.gallery-img');
 
+let lastFocusedElement = null;
+
+function openModal(triggerImg) {
+    lastFocusedElement = triggerImg;
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+    modalImg.src = triggerImg.src;
+    modalImg.alt = triggerImg.alt;
+    captionText.textContent = triggerImg.alt;
+    closeModal.focus();
+}
+
+function closeModalFn() {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    if (lastFocusedElement) {
+        lastFocusedElement.focus();
+    }
+}
+
 if (galleryImages.length > 0) {
     galleryImages.forEach(img => {
         img.addEventListener('click', function() {
-            modal.style.display = 'block';
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
+            openModal(this);
         });
     });
 
-    closeModal.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
+    closeModal.addEventListener('click', closeModalFn);
 
     // Close modal when clicking outside the image
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
-            modal.style.display = 'none';
+            closeModalFn();
+        }
+    });
+
+    // Close modal on Escape key
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.style.display === 'block') {
+            closeModalFn();
         }
     });
 }
