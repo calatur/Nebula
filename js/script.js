@@ -137,6 +137,19 @@ if (contactForm) {
 }
 
 
+// 6. FAQ Accordion (Dynamic Content / Show-Hide)
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(button => {
+    button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        const answer = document.getElementById(button.getAttribute('aria-controls'));
+
+        button.setAttribute('aria-expanded', String(!expanded));
+        answer.hidden = expanded;
+    });
+});
+
 // 5. Opacity Fade Slider Logic
 const opacitySlider = document.getElementById('opacity-slider');
 const topImg = document.getElementById('fade-top-img');
