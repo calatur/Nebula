@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Nebula</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Nebula</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-btn">☀️</button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-section">
+            <h2>Astrophotography Gallery</h2>
+            <p>Click on any image to expand.</p>
+            <div class="gallery-grid">
+                <img src="images/StarTrails.jpg" alt="Star Trails around Polaris, the North Star" class="gallery-img">
+                <img src="images/MWprocessed.jpg" alt="The Milky Way" class="gallery-img">
+                <img src="images/Anromeda.jpg" alt="The Andromeda Galaxy amidst the sea of stars" class="gallery-img">
+                <img src="images/Orion.jpg" alt="The Orion Constellation" class="gallery-img">
+            </div>
+        </section>
+
+        <!-- Dynamic JS Modal -->
+        <div id="image-modal" class="modal">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <img class="modal-content" id="modal-img">
+            <div id="modal-caption"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nebula Mobile Astrophotography. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
