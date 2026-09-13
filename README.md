@@ -56,6 +56,6 @@ No build step needed. Clone the repo and open `index.html` in a browser.
 
 ## Author
 
-Built by Muhammad Ali (BCSF24A024) for BSCS Self-Support F24.
-Course: Web Technologies
-Instructor: Dr. Noman Shafi
+- Built by Muhammad Ali (BCSF24A024) for BSCS Self-Support F24.
+- Course: Web Technologies
+- Instructor: Dr. Noman Shafi
