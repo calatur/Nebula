@@ -112,3 +112,23 @@ if (contactForm) {
     });
 }
 
+
+// 5. Opacity Fade Slider Logic
+const opacitySlider = document.getElementById('opacity-slider');
+const topImg = document.getElementById('fade-top-img');
+
+if (opacitySlider && topImg) {
+    // Listen for the slider being dragged ('input' event)
+    opacitySlider.addEventListener('input', (event) => {
+        // The slider value goes from 0 to 100.
+        const sliderValue = event.target.value;
+        
+        // Convert the 0-100 scale to a 1.0 to 0.0 scale for CSS opacity
+        // 0 slider = 1.0 opacity (fully visible raw image)
+        // 100 slider = 0.0 opacity (completely invisible, showing processed image below)
+        const currentOpacity = 1 - (sliderValue / 100);
+        
+        // Apply the new opacity to the top image inline style
+        topImg.style.opacity = currentOpacity;
+    });
+}
