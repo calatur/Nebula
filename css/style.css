@@ -319,3 +319,88 @@ footer a {
 }
 
 .center-title { text-align: center; }
+
+
+/* Fade Slider Container */
+.fade-slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto 4rem auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    background-color: var(--card-bg);
+}
+
+.slider-label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Base styling for both images */
+.fade-slider-container img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+/* The processed image sits at the bottom */
+.slider-img-bottom {
+    position: relative;
+    z-index: 0;
+}
+
+/* The raw image sits directly on top */
+.slider-img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Opacity is controlled dynamically by JavaScript */
+}
+
+/* Range Input Styling */
+.opacity-slider {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: 2;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.4);
+    height: 6px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.opacity-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+.opacity-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
