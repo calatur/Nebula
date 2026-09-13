@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A gallery of mobile astrophotography — star trails, the Milky Way, Andromeda, and Orion, all shot on a smartphone.">
     <title>Gallery | Nebula</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8C%8C</text></svg>">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,16 +15,17 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="gear.html">Gear &amp; Techniques</a></li>
                 <li><a href="gallery.html" class="active">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-controls">
-                <button id="theme-toggle" class="theme-btn">☀️</button>
-                <div class="hamburger" id="hamburger">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle light and dark theme">☀️</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
@@ -32,17 +35,29 @@
             <h2>Astrophotography Gallery</h2>
             <p>Click on any image to expand.</p>
             <div class="gallery-grid">
-                <img src="images/StarTrails.jpg" alt="Star Trails around Polaris, the North Star" class="gallery-img">
-                <img src="images/MWprocessed.jpg" alt="The Milky Way" class="gallery-img">
-                <img src="images/Anromeda.jpg" alt="The Andromeda Galaxy amidst the sea of stars" class="gallery-img">
-                <img src="images/Orion.jpg" alt="The Orion Constellation" class="gallery-img">
+                <figure class="gallery-item">
+                    <img src="images/StarTrails.jpg" alt="Star Trails around Polaris, the North Star" class="gallery-img">
+                    <figcaption>Star Trails around Polaris</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/MWprocessed.jpg" alt="The Milky Way" class="gallery-img">
+                    <figcaption>The Milky Way</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/Andromeda.jpg" alt="The Andromeda Galaxy amidst the sea of stars" class="gallery-img">
+                    <figcaption>The Andromeda Galaxy</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/Orion.jpg" alt="The Orion Constellation" class="gallery-img">
+                    <figcaption>The Orion Constellation</figcaption>
+                </figure>
             </div>
         </section>
 
         <!-- Dynamic JS Modal -->
-        <div id="image-modal" class="modal">
-            <span class="close-modal" id="close-modal">&times;</span>
-            <img class="modal-content" id="modal-img">
+        <div id="image-modal" class="modal" role="dialog" aria-modal="true" aria-label="Expanded gallery image" aria-hidden="true">
+            <button class="close-modal" id="close-modal" aria-label="Close expanded image">&times;</button>
+            <img class="modal-content" id="modal-img" alt="">
             <div id="modal-caption"></div>
         </div>
     </main>
